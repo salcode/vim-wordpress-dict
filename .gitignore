@@ -1,2 +1,2 @@
-latest.tgz
-wordpress
+# ignore WordPress data files used to generate dict files
+source
