@@ -9,6 +9,10 @@ Installation
 
 You should be able to use whatever preferred method of plugin installation you prefer.  Personally, I use the excellent [vim-plug](https://github.com/junegunn/vim-plug) which allows me to install the plugin by adding the following to my `.vimrc`
 
+```
+Plug 'salcode/vim-wordpress-dict'
+```
+
 Rebuild the dict Files
 ----------------------
 
