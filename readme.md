@@ -1,58 +1,37 @@
-# WordPress dict files for vim
----
+Vim WordPress Dictionary Plugin
+===============================
 
-vim-dict-wordpress is a distribution of WordPress dictionary files for Vim.
-This dictionary includes all action hooks, filter hooks and functions.
+This plugin loads dictionary files for WordPress core into Vim.  The dictionary
+files include action hooks, filter hooks, functions, and classes.
 
-![Screen Shot](http://firegoby.jp/wp-content/uploads/2013/03/vim-wordpress-dict.png)
+Installation
+------------
 
-## How do I made the dict ?
+You should be able to use whatever preferred method of plugin installation you prefer.  Personally, I use the excellent [vim-plug](https://github.com/junegunn/vim-plug) which allows me to install the plugin by adding the following to my `.vimrc`
+
+Rebuild the dict Files
+----------------------
+
+You can rebuild the dict files by running the following from the command line.
 
 ```
 $ bash ./build.sh
 ```
 
-I was using grep to search hooks and functions.
+### How Does It Work
 
-```
-# action hooks
-find . -name "*.php" | xargs grep "do_action" \
-| sed "s/^.*do_action/do_action/g"| sed "s/);.*/);/g" \
-| sed "s/ //g" | sed "s/\"/\'/g" | sed "s/do_action(\'//g" \
-| sed "s/\'.*$//g" | sed "s/^.*(.*$//g" | tr -d ' ' | sort | uniq
-```
+The build script downloads the latest release of WordPress and uses regular
+expressions to extract the values for the dict files.
 
-```
-# filter hooks
-find . -name "*.php" | xargs grep "apply_filters" \
-| sed "s/^.*apply_filters/apply_filters/g"| sed "s/);.*/);/g" \
-| sed "s/ //g" | sed "s/\"/\'/g" | sed "s/apply_filters(\'//g" \
-| sed "s/\'.*$//g" | sed "s/^.*(.*$//g" | tr -d ' ' | sort | uniq
-```
+Credits
+-------
 
-```
-# functions
-find . -name "*.php" -exec egrep '^function ' {} \; \
-| sed -e "s/function \(.*\)(.*/\1/g" | sed -e "s/^&//g" \
-| sed -e "s/(.*$//g" | tr -d ' ' |sort | uniq
-```
+This project is a fork of [vim-dict-wordpress](https://github.com/miya0001/vim-dict-wordpress) by @miya0001, who did all of the amazing hard work to make this possible.  I've merely wrapped the code in a Vim plugin for ease of installation.
 
-```
-# class
-find . -name "*.php" | xargs grep "^class" \
-| sed "s/.*\:class //g" \
-| sed "s/ .*//g" | tr -d ' ' | sort | uniq
-```
+- @miya0001 - original author
+- @salcode
 
-## Install
-
-    $ cd ~/.vim/dict
-    $ git clone git://github.com/miya0001/vim-dict-wordpress.git
-
-finally, add line to ~/.vimrc like below.
-
-    autocmd FileType php :set dictionary=~/.vim/dict/vim-dict-wordpress/*.dict
-
-## License
+License
+-------
 
 This dictionary file is released under the terms of the GPL version 2 or (at your option) any later version.
