@@ -1,17 +1,24 @@
 
 {
-  "name": "vim-dict-wordpress",
-  "version": "4.3.0",
+  "name": "salcode/vim-wordpress-dict",
+  "version": "4.7.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miya0001/vim-dict-wordpress.git"
+    "url": "https://github.com/salcode/vim-wordpress-dict"
   },
   "scripts": {
     "build": "/usr/bin/env bash ./build.sh"
   },
-  "author": "Takayuki Miyauchi",
-  "license": "MIT",
+  "author": {
+	  "name": "Sal Ferrarello",
+	  "url": "https://github.com/salcode"
+  },
+  "contributors": {
+	  "name": "Takayuki Miyauchi",
+	  "url": "https://github.com/miya0001"
+  },
+  "license": "GPL-2",
   "bugs": {
-    "url": "https://github.com/miya0001/vim-dict-wordpress/issues"
+    "url": "https://github.com/salcode/vim-wordpress-dict/issues"
   }
 }
