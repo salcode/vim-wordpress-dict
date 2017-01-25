@@ -2319,6 +2319,7 @@ wp_get_ext_types
 wp_get_http
 wp_get_http_headers
 wp_get_image_editor
+wp_get_image_mime
 wp_get_installed_translations
 wp_get_link_cats
 wp_get_links
