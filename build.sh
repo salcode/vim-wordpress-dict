@@ -30,3 +30,19 @@ find source/wordpress -name "*.php" -exec egrep '^function ' {} \; \
 find source/wordpress -name "*.php" | xargs grep "^class" \
 | sed "s/.*\:class //g" \
 | sed "s/ .*//g" | tr -d ' ' | sed "/^$/d" | sort | uniq > ./data/classes.dict
+
+###################################################
+
+# Build syntax files.
+
+## Action hooks syntax file
+sed -e 's/^/syntax keyword phpKeyword /' ./data/action-hooks.dict > after/syntax/php/action-hooks.vim
+
+## Filter hooks syntax file
+sed -e 's/^/syntax keyword phpKeyword /' ./data/filter-hooks.dict > after/syntax/php/filter-hooks.vim
+
+## Functions syntax file
+sed -e 's/^/syntax keyword phpFunctions /' ./data/functions.dict > after/syntax/php/functions.vim
+
+## Class syntax file
+sed -e 's/^/syntax keyword phpClasses /' ./data/classes.dict > after/syntax/php/classes.vim
