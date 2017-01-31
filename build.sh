@@ -3,7 +3,7 @@
 set -ex
 
 mkdir -p source
-# curl -L https://wordpress.org/latest.tar.gz -o source/latest.tgz
+curl -L https://wordpress.org/latest.tar.gz -o source/latest.tgz
 tar zxvf source/latest.tgz -C source/
 rm -fr source/wordpress/wp-content/
 
