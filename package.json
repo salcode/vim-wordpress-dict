@@ -1,7 +1,7 @@
 
 {
   "name": "salcode/vim-wordpress-dict",
-  "version": "4.7.3",
+  "version": "4.7.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/salcode/vim-wordpress-dict"
